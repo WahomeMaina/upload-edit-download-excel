@@ -1,0 +1,56 @@
+mat-card {
+  width: 800px;
+  align-self: center;
+  margin-top: 50px;
+  border: solid 1px gainsboro;
+  background-color: white;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+mat-card-header {
+  background-color: #428bca;
+  font-weight: 400;
+  color: white;
+  font-weight: 500;
+  padding: 5px 10px;
+}
+
+.explanation {
+  font-size: small;
+}
+
+.red-text {
+  color: rgb(59, 9, 240);
+}
+
+.key-span {
+  font-size: small;
+}
+
+.form-group {
+  margin-top: 10px;
+}
+
+.export-button {
+  float: right;
+}
+
+td {
+  padding-left: 5px;
+  border-bottom: solid 1px gray;
+  text-align: center;
+}
+
+th {
+  background-color: #509af3;
+  font-weight: 400;
+  color: white;
+  border-bottom: solid 1px white;
+  text-align: center;
+  padding: 5px;
+}
