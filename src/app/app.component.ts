@@ -35,14 +35,15 @@ export class AppComponent {
     var parts = input.split(/[^\d\w]+/);
     var lat = this.ConvertDMSToDD(
       parts[1],
-      parts[2],
-      (Number(parts[3]) / 100) * 60,
+      Number(parts[2].toString() + '.' + parts[3].toString()),
+      0 * 60,
       parts[0]
     );
     var lng = this.ConvertDMSToDD(
       parts[5],
-      parts[6],
-      (Number(parts[7]) / 100) * 60,
+      // parts[6].parts[7],
+      Number(parts[6].toString() + '.' + parts[7].toString()),
+      0 * 60,
       parts[4]
     );
     return { lat: lat, lng: lng };
@@ -60,8 +61,8 @@ export class AppComponent {
     if (direction == 'S' || direction == 'W') {
       dd = dd * -1;
     } // Don't do anything for N or E
-    //convert all to 10 decimal places
-    return dd.toFixed(10);
+    //convert all to  decimal places
+    return dd.toFixed(6);
   }
 
   //export data   to excel
