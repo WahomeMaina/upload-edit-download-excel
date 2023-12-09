@@ -30,7 +30,7 @@ export class AppComponent {
     };
   }
 
-  // parse your input
+  // parse your input if input is in the format N 00°03.73’	E 040°18.75’
   ParseDMS(input: any) {
     var parts = input.split(/[^\d\w]+/);
     var lat = this.ConvertDMSToDD(
@@ -46,6 +46,19 @@ export class AppComponent {
       0 * 60,
       parts[4]
     );
+    return { lat: lat, lng: lng };
+  }
+
+  // parse your input if input is in the format N 00°17'00" 	E 36°56'00"
+  ParseDMSFormat2(input: any) {
+    var parts = input.split(/[^\d\w]+/);
+    var lat = this.ConvertDMSToDD(
+      parts[1],
+      parts[2].toString(),
+      parts[3].toString(),
+      parts[0]
+    );
+    var lng = this.ConvertDMSToDD(parts[5], parts[6], parts[7], parts[4]);
     return { lat: lat, lng: lng };
   }
 
